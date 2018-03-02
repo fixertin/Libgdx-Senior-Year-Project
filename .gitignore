@@ -1,62 +1,63 @@
 
 # User-specific stuff:
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
+LibgdxRpg/.idea/**/workspace.xml
+LibgdxRpg/.idea/**/tasks.xml
+LibgdxRpg/.idea/dictionaries
 
 # Sensitive or high-churn files:
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+LibgdxRpg/.idea/**/dataSources/
+LibgdxRpg/.idea/**/dataSources.ids
+LibgdxRpg/.idea/**/dataSources.local.xml
+LibgdxRpg/.idea/**/sqlDataSources.xml
+LibgdxRpg/.idea/**/dynamic.xml
+LibgdxRpg/.idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
+LibgdxRpg/.idea/**/gradle.xml
+LibgdxRpg/.idea/**/libraries
 
 # CMake
-cmake-build-debug/
-cmake-build-release/
+LibgdxRpg/cmake-build-debug/
+LibgdxRpg/cmake-build-release/
 
 # Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
+LibgdxRpg/.idea/**/mongoSettings.xml
 
 ## File-based project format:
-*.iws
+LibgdxRpg/*.iws
 
 ## Plugin-specific files:
 
 # IntelliJ
-out/
+LibgdxRpg/out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+LibgdxRpg/.idea_modules/
 
 # JIRA plugin
-atlassian-ide-plugin.xml
+LibgdxRpg/atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
-.idea/replstate.xml
+LibgdxRpg/.idea/replstate.xml
 
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+LibgdxRpg/# Crashlytics plugin (for Android Studio and IntelliJ)
+LibgdxRpg/com_crashlytics_export_strings.xml
+LibgdxRpg/crashlytics.properties
+LibgdxRpg/crashlytics-build.properties
+LibgdxRpg/fabric.properties
 
 # Compiled class file
-*.class
+LibgdxRpg/*.class
 
 # Log file
-*.log
+LibgdxRpg/*.log
 
 # BlueJ files
-*.ctxt
+LibgdxRpg/*.ctxt
 
 # Mobile Tools for Java (J2ME)
-.mtj.tmp/
+LibgdxRpg/.mtj.tmp/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
