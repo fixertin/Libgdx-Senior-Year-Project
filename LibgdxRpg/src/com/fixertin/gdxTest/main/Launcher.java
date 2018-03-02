@@ -10,6 +10,6 @@ public class Launcher {
         config.height = 576;
         config.backgroundFPS = 60;
         config.foregroundFPS = 60;
-        new LwjglApplication(new Main(), config);
+        new LwjglApplication(new RpgGame(), config);
     }
 }
