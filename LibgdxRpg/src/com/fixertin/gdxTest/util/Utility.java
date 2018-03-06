@@ -6,7 +6,7 @@ import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 
 public final class Utility {
     public static final AssetManager assetManager = new AssetManager();
-    
+
     private static final String TAG = Utility.class.getSimpleName();
     private static InternalFileHandleResolver filePathResolver = new InternalFileHandleResolver();
 
