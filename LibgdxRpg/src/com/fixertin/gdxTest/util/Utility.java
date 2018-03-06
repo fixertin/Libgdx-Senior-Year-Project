@@ -2,7 +2,9 @@ package com.fixertin.gdxTest.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.TextureLoader;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.graphics.Texture;
 
 public final class Utility {
     public static final AssetManager assetManager = new AssetManager();
@@ -30,4 +32,34 @@ public final class Utility {
     public static boolean isAssetLoaded(String fileName){
         return assetManager.isLoaded(fileName);
     }
+    public static void loadTextureAsset(String textureFilenamePath){
+        if( textureFilenamePath == null || textureFilenamePath.isEmpty()){
+            return;
+        }
+        //load asset
+        if( filePathResolver.resolve(textureFilenamePath).exists() ){
+            assetManager.setLoader(Texture.class, new TextureLoader(filePathResolver));
+            assetManager.load(textureFilenamePath, Texture.class);
+            //Until we add loading screen,
+            //just block until we load the map
+            assetManager.finishLoadingAsset(textureFilenamePath);
+        }
+        else{
+            Gdx.app.debug(TAG, "Texture doesn’t exist!: " +
+                    textureFilenamePath );
+        }
+    }
+    public static Texture getTextureAsset(String textureFilenamePath){
+        Texture texture = null;
+        // once the asset manager is done loading
+        if(assetManager.isLoaded(textureFilenamePath) ){
+            texture =
+                    assetManager.get(textureFilenamePath,Texture.class);
+        } else {
+            Gdx.app.debug(TAG, "Texture is not loaded: " +
+                    textureFilenamePath );
+        }
+        return texture;
+    }
+
 }
