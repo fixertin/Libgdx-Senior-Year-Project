@@ -6,14 +6,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.fixertin.gdxTest.util.Unit;
 
-public class GameScreen implements Screen{
-    private static final String TAG = GameScreen.class.getSimpleName();
+public class TestScreen implements Screen {
+    private static final String TAG = TestScreen.class.getSimpleName();
     private OrthographicCamera camera = null;
     private Batch batch = new SpriteBatch();
 
@@ -30,7 +28,7 @@ public class GameScreen implements Screen{
 
     }
 
-    public GameScreen(){
+    public TestScreen(){
         setupViewport(10,10);
         camera = new OrthographicCamera();
         camera.setToOrtho(false, VIEWPORT.viewportWidth,
@@ -121,12 +119,12 @@ public class GameScreen implements Screen{
         //update viewport if there could be skewing
         if( VIEWPORT.physicalWidth / VIEWPORT.physicalHeight >= VIEWPORT.aspectRatio){
             //Letterbox left and right
-            VIEWPORT.viewportWidth = VIEWPORT.viewportHeight * (VIEWPORT.physicalWidth/VIEWPORT.physicalHeight);
+            VIEWPORT.viewportWidth = VIEWPORT.viewportHeight * (VIEWPORT.physicalWidth/ VIEWPORT.physicalHeight);
             VIEWPORT.viewportHeight = VIEWPORT.virtualHeight;
         }else{
             //letterbox above and below
             VIEWPORT.viewportWidth = VIEWPORT.virtualWidth;
-            VIEWPORT.viewportHeight = VIEWPORT.viewportWidth * (VIEWPORT.physicalHeight/VIEWPORT.physicalWidth);
+            VIEWPORT.viewportHeight = VIEWPORT.viewportWidth * (VIEWPORT.physicalHeight/ VIEWPORT.physicalWidth);
         }
 
 

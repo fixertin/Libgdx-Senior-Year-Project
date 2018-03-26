@@ -1,8 +1,8 @@
-package com.fixertin.gdxTest.worlds;
+package com.fixertin.gdxTest.screens;
 
 import com.badlogic.gdx.Screen;
 
-public class GameWorld implements Screen {
+public class ComputerScreen implements Screen {
     @Override
     public void show() {
 
