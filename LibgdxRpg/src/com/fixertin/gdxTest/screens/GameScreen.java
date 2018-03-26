@@ -10,7 +10,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.fixertin.gdxTest.entities.Entity;
 import com.fixertin.gdxTest.util.Unit;
+
+import java.util.ArrayList;
 
 public class GameScreen implements Screen{
     private static final String TAG = GameScreen.class.getSimpleName();
@@ -18,6 +21,8 @@ public class GameScreen implements Screen{
     private Batch batch = new SpriteBatch();
 
     private ShapeRenderer sp = new ShapeRenderer();
+
+    private static ArrayList<Entity> entities = new ArrayList<Entity>();
 
     private static class VIEWPORT{
         static float viewportWidth;
@@ -74,6 +79,13 @@ public class GameScreen implements Screen{
         sp.rect(30/Unit.PPM, 30/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
         sp.rect(40/Unit.PPM, 40/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
         sp.end();
+
+        for(Entity e : entities){
+            e.update(Gdx.graphics.getDeltaTime());
+        }
+        for(Entity e : entities){
+            e.render(batch, Gdx.graphics.getDeltaTime());
+        }
 
     }
 
@@ -135,4 +147,19 @@ public class GameScreen implements Screen{
         Gdx.app.log(TAG, "WorldRenderer: viewport: (" + VIEWPORT.viewportWidth + "," + VIEWPORT.viewportHeight + ")" );
         Gdx.app.log(TAG, "WorldRenderer: physical: (" + VIEWPORT.physicalWidth + "," + VIEWPORT.physicalHeight + ")" );
     }
+
+    public static void addEntity(Entity entity){
+        if(entity == null)
+            return;
+        entities.add(entity);
+    }
+
+    public static void removeEntity(Entity entity){
+        if(entity == null)
+            return;
+        else if(!entities.contains(entity))
+            return;
+        entities.remove(entity);
+    }
+
 }
