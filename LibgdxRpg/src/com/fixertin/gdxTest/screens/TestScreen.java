@@ -1,6 +1,7 @@
 package com.fixertin.gdxTest.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -8,7 +9,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.fixertin.gdxTest.entities.Entity;
+import com.fixertin.gdxTest.util.InputController;
 import com.fixertin.gdxTest.util.Unit;
+
+import java.util.ArrayList;
 
 public class TestScreen implements Screen {
     private static final String TAG = TestScreen.class.getSimpleName();
@@ -16,6 +21,10 @@ public class TestScreen implements Screen {
     private Batch batch = new SpriteBatch();
 
     private ShapeRenderer sp = new ShapeRenderer();
+
+    public ArrayList<Entity> entities = new ArrayList<Entity>();
+
+    public InputController controller;
 
     private static class VIEWPORT{
         static float viewportWidth;
@@ -38,7 +47,7 @@ public class TestScreen implements Screen {
 
     @Override
     public void show() {
-
+        controller = (InputController) Gdx.input.getInputProcessor();
 
 
 
@@ -50,6 +59,7 @@ public class TestScreen implements Screen {
         //Gdx.input.setInputProcessor(controller);
     }
 
+    int testx=10, testy=10;
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0,0,0,1);
@@ -68,10 +78,20 @@ public class TestScreen implements Screen {
         sp.setColor(Color.RED);
         sp.rect(0, 0, 10/ Unit.PPM, 10/ Unit.PPM);
         sp.rect(10/Unit.PPM, 10/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
-        sp.rect(20/Unit.PPM, 20/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
-        sp.rect(30/Unit.PPM, 30/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
-        sp.rect(40/Unit.PPM, 40/Unit.PPM, 10/ Unit.PPM, 10/ Unit.PPM);
         sp.end();
+
+
+
+
+            testx += 10;
+            testy += 10;
+            Entity en = new Entity(testx/Unit.PPM, testy/Unit.PPM, 0, 0, 10/Unit.PPM, 10/Unit.PPM);
+            entities.add(en);
+
+
+        for(Entity e : entities){
+            e.render(batch, sp, Gdx.graphics.getDeltaTime());
+        }
 
     }
 

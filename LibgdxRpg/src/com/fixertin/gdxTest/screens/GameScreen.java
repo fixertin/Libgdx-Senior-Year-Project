@@ -84,7 +84,7 @@ public class GameScreen implements Screen{
             e.update(Gdx.graphics.getDeltaTime());
         }
         for(Entity e : entities){
-            e.render(batch, Gdx.graphics.getDeltaTime());
+            e.render(batch, sp, Gdx.graphics.getDeltaTime());
         }
 
     }

@@ -4,5 +4,5 @@ import com.badlogic.gdx.Screen;
 import com.fixertin.gdxTest.entities.Entity;
 
 public class State{
-    private static Entity PLAYER = new Entity();
+    //private static Entity PLAYER = new Entity();
 }
