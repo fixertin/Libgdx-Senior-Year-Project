@@ -24,7 +24,6 @@ public class TestScreen implements Screen {
 
     public ArrayList<Entity> entities = new ArrayList<Entity>();
 
-    public InputController controller;
 
     private static class VIEWPORT{
         static float viewportWidth;
@@ -47,7 +46,6 @@ public class TestScreen implements Screen {
 
     @Override
     public void show() {
-        controller = (InputController) Gdx.input.getInputProcessor();
 
 
 
@@ -59,7 +57,7 @@ public class TestScreen implements Screen {
         //Gdx.input.setInputProcessor(controller);
     }
 
-    int testx=10, testy=10;
+    private int testx=10, testy=10;
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0,0,0,1);
@@ -82,11 +80,12 @@ public class TestScreen implements Screen {
 
 
 
-
+        if(Gdx.input.justTouched()) {
             testx += 10;
             testy += 10;
-            Entity en = new Entity(testx/Unit.PPM, testy/Unit.PPM, 0, 0, 10/Unit.PPM, 10/Unit.PPM);
+            Entity en = new Entity(testx / Unit.PPM, testy / Unit.PPM, 0, 0, 10 / Unit.PPM, 10 / Unit.PPM);
             entities.add(en);
+        }
 
 
         for(Entity e : entities){

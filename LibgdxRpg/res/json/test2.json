@@ -1,0 +1,24 @@
+{
+  "dialogs":{
+    "dialog": {
+      "id": 1,
+      "speaker": "Capitalist",
+      "text": "You know...."
+    },
+    "dialog": {
+      "id": 2,
+      "speaker": "JoJoseph Stalin",
+      "text": "Next you're going to say 'Communism has never worked'!"
+    },
+    "dialog": {
+      "id": 3,
+      "speaker": "Capitalist",
+      "text": "Communism has never worked!"
+    },
+    "dialog": {
+      "id": 4,
+      "speaker": "Capitalist",
+      "text": "NANI!?"
+    }
+  }
+}

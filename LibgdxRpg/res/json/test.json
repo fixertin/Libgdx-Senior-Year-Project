@@ -1,0 +1,19 @@
+{
+  "dialogs":[
+    {
+      "id": 1,
+      "speaker": "John",
+      "text": "You know...."
+    },
+    {
+      "id": 2,
+      "speaker": "John",
+      "text": "Sometimes I dream of cheese..."
+    },
+    {
+      "id": 3,
+      "speaker": "Five",
+      "text": "You tell us every day... please stop"
+    }
+  ]
+}
